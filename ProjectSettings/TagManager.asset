@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - th
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Plant Decor
   - 
   - 
   - 
@@ -40,4 +42,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1584709559
+    locked: 0
+  - name: Ground
+    uniqueID: 2700633341
+    locked: 0
+  - name: Grass
+    uniqueID: 1011667923
+    locked: 0
+  - name: Plant Decor
+    uniqueID: 2099741749
+    locked: 0
+  - name: Enemies
+    uniqueID: 1498316117
     locked: 0
