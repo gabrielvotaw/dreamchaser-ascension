@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Plant Decor
-  - 
+  - Ground
   - 
   - 
   - 
@@ -57,4 +57,7 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 1498316117
+    locked: 0
+  - name: Player
+    uniqueID: 914086637
     locked: 0
