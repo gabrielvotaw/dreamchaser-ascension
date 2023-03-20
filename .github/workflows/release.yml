@@ -1,0 +1,76 @@
+name: Create Release
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Determine Update Type
+        id: determine_type
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          if [[ $title =~ ^Major ]]; then
+            echo "::set-output name=update_type::major"
+          elif [[ $title =~ ^Minor ]]; then
+            echo "::set-output name=update_type::minor"
+          else
+            echo "::set-output name=update_type::patch"
+          fi
+      - name: Determine New Tag Name
+        id: determine_tag
+        run: |
+          git fetch --tags origin
+          CURRENT_TAG=$(git tag | sort -rV | head -n1)
+          echo "Current Version: $CURRENT_TAG"
+          if [[ -z "$CURRENT_TAG" ]]; then
+            # No previous tag exists, set tag number to 0.0.0
+            TAG_NUMBER=0
+            MINOR_NUMBER=0
+            PATCH_NUMBER=0
+          else
+            # Extract the tag number, minor number, and patch number
+            TAG_NUMBER=$(echo $CURRENT_TAG | cut -d "." -f 1 | sed 's/v//')
+            MINOR_NUMBER=$(echo $CURRENT_TAG | cut -d "." -f 2)
+            PATCH_NUMBER=$(echo $CURRENT_TAG | cut -d "." -f 3)
+          fi
+          # Get the update type from the user
+          UPDATE_TYPE=${{ steps.determine_type.outputs.update_type }}
+          # Increment the corresponding part of the tag number
+          case $UPDATE_TYPE in
+            patch)
+              PATCH_NUMBER=$((PATCH_NUMBER+1))
+              ;;
+            minor)
+              MINOR_NUMBER=$((MINOR_NUMBER+1))
+              PATCH_NUMBER=0
+              ;;
+            major)
+              TAG_NUMBER=$((TAG_NUMBER+1))
+              MINOR_NUMBER=0
+              PATCH_NUMBER=0
+              ;;
+            *)
+              echo "Invalid update type. Please enter patch, minor, or major."
+              exit 1
+              ;;
+          esac
+          # Construct the new tag name
+          NEW_TAG_NAME="v${TAG_NUMBER}.${MINOR_NUMBER}.${PATCH_NUMBER}"
+          echo "::set-output name=new_tag::$NEW_TAG_NAME"
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ${{ env.RELEASE_ASSETS }}
+          token: ${{ secrets.TOKEN_GITHUB }}
+          tag_name: ${{ steps.determine_tag.outputs.new_tag }}
+          name: ${{ steps.determine_tag.outputs.new_tag }}
+          body: ${{ github.event.pull_request.body }}
