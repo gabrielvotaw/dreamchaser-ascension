@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 281.5
     height: 573
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 228
     height: 339.5
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Graphics/CosmicMan/DemoAnimations
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Graphics/CosmicMan/DemoAnimations
   m_LastFoldersGridSize: 71
   m_LastProjectPath: /Users/gabrielvotaw/Code/games/Dreamchaser_Ascension
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a5f0000
-    m_LastClickedID: 24378
-    m_ExpandedIDs: 00000000bc5e0000be5e0000c25e00005ea4000000ca9a3b
+    scrollPos: {x: 0, y: 86.663635}
+    m_SelectedIDs: c6600000
+    m_LastClickedID: 24774
+    m_ExpandedIDs: 00000000f45e0000f65e0000f85e0000fa5e0000045f0000c060000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc5e0000be5e0000c05e0000c25e0000c45e0000
+    m_ExpandedIDs: 00000000f45e0000f65e0000f85e0000fa5e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300008c5e000054630000bea30000
+    m_ExpandedInstanceIDs: c62300008c5e000054630000bea3000094600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dc5d0000
-      m_LastClickedID: 24028
-      m_ExpandedIDs: d479ffff2afbffffce5d0000
+      m_SelectedIDs: ec5d0000
+      m_LastClickedID: 24044
+      m_ExpandedIDs: 2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.19325157, y: -0.416012, z: -1.4893839}
+    m_Target: {x: -0.76249564, y: 0.16561311, z: -1.3778574}
     speed: 2
-    m_Value: {x: 0.19325157, y: -0.416012, z: -1.4893839}
+    m_Value: {x: -0.76249564, y: 0.16561311, z: -1.3778574}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,9 +851,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.2687635
+    m_Target: 5.261214
     speed: 2
-    m_Value: 5.2687635
+    m_Value: 5.261214
   m_Ortho:
     m_Target: 1
     speed: 2
