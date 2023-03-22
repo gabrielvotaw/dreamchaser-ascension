@@ -70,7 +70,7 @@ jobs:
         with:
           files: |
             ${{ env.RELEASE_ASSETS }}
-          token: ${{ secrets.TOKEN_GITHUB }}
+          token: ${{ secrets.DCA_TOKEN }}
           tag_name: ${{ steps.determine_tag.outputs.new_tag }}
           name: ${{ steps.determine_tag.outputs.new_tag }}
           body: ${{ github.event.pull_request.body }}
