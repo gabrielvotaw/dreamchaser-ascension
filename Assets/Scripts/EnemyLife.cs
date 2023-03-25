@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWave : MonoBehaviour
+public class EnemyLife : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int health;
+
     void Start()
     {
         
