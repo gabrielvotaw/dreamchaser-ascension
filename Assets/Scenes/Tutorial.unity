@@ -1481,7 +1481,7 @@ Transform:
   m_Children:
   - {fileID: 426945543}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &541572318
 MonoBehaviour:
@@ -1615,7 +1615,7 @@ Transform:
   - {fileID: 65270768}
   - {fileID: 222574906}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &822801025
 PrefabInstance:
@@ -1857,7 +1857,7 @@ Transform:
   - {fileID: 1360263391}
   - {fileID: 258863574}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1073294315 stripped
 Transform:
@@ -1899,13 +1899,223 @@ Transform:
   - {fileID: 1425858961}
   - {fileID: 2012326335}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215973185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6769511442386990192, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
   m_PrefabInstance: {fileID: 7320706519189833267}
   m_PrefabAsset: {fileID: 0}
+--- !u!213 &1251163505
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 4
+    height: 4
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 4
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 0
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    00000000000000000000000000000000: 0
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 4
+      height: 4
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 4, y: 2, z: 4, w: 2}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 4
+      height: 4
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 4, y: 2, z: 4, w: 2}
+    downscaleMultiplier: 1
+  m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
 --- !u!4 &1297687807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7921239842262624887, guid: ad5bc40f96dce47cca4eba93c4cf7729, type: 3}
@@ -1954,7 +2164,7 @@ Transform:
   m_Children:
   - {fileID: 1701047556}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360263390
 GameObject:
@@ -2115,6 +2325,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8648213051525499827, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
   m_PrefabInstance: {fileID: 402014986}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1550944347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 1251163505}
+  m_Color: {r: 0.826441, g: 0.37628698, b: 0.502752, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 3
+  m_ColliderType: 1
 --- !u!1001 &1608592104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2172,6 +2416,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c16f14535030c40559b65bf404cbefd6, type: 3}
+--- !u!1001 &1645266958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3543413
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12252435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164888, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405357292384164894, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
+      propertyPath: m_Name
+      value: Small Platform V2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8055a68b9db44da6bd1737e2a2dea0c, type: 3}
 --- !u!1001 &1692685016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6884,6 +7185,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -45, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741827
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 3
@@ -6898,8 +7209,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 4b9d694af05514d42b5cc8c861a7dc53, type: 2}
   - m_RefCount: 92
     m_Data: {fileID: 11400000, guid: f24eb99013fd27f41a3ca0644dedde35, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1550944347}
   - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: d9a2d3b70b1663c45b556adf708c9102, type: 2}
   - m_RefCount: 10
@@ -6919,8 +7230,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 046b0256d2fa2c64fb3a7689fffbaf3f, type: 3}
   - m_RefCount: 92
     m_Data: {fileID: 21300000, guid: 3f60caf1034881949921abac5e6ce960, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1251163505}
   - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: 6a76e32b09013ab438a77b41d382d353, type: 3}
   - m_RefCount: 10
@@ -6928,7 +7239,7 @@ Tilemap:
   - m_RefCount: 70
     m_Data: {fileID: 21300000, guid: 17e40cecbd93db641ada5f1e038c89ed, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 456
+  - m_RefCount: 457
     m_Data:
       e00: 1
       e01: 0
@@ -6949,11 +7260,13 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 456
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 1
+    m_Data: {r: 0.826441, g: 0.37628698, b: 0.502752, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -35, y: -9, z: 0}
-  m_Size: {x: 83, y: 11, z: 1}
+  m_Origin: {x: -45, y: -9, z: 0}
+  m_Size: {x: 93, y: 11, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7009,6 +7322,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1701047559}
     m_ColliderPaths:
+    - - X: -440000000
+        Y: 0
+      - X: -450000000
+        Y: 0
+      - X: -450000000
+        Y: -10000000
+      - X: -440000000
+        Y: -10000000
     - - X: -59645832
         Y: -90312496
       - X: -59645832
@@ -7059,6 +7380,10 @@ CompositeCollider2D:
         Y: -90625000
   m_CompositePaths:
     m_Paths:
+    - - {x: -44.00003, y: -1}
+      - {x: -44.00003, y: 0}
+      - {x: -45, y: -0.000029300001}
+      - {x: -44.999973, y: -1}
     - - {x: 48.004158, y: -9.0625}
       - {x: 48.035416, y: -9.031239}
       - {x: 48.035408, y: -2.9624925}
@@ -7331,7 +7656,7 @@ Transform:
   - {fileID: 1490211238}
   - {fileID: 1297687807}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2012326335 stripped
 Transform:
@@ -7644,11 +7969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6769511442386990197, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.21
+      value: -32.46
       objectReference: {fileID: 0}
     - target: {fileID: 6769511442386990197, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 7320706519533165129, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_Interpolate
