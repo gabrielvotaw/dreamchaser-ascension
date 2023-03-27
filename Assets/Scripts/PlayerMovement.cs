@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
+    private float facingX = 1f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
     public Transform FirePosition;
@@ -38,7 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+    {  
+        if(dirX > 0f){
+            facingX = -1;
+        }else if(dirX < 0f){
+            facingX = 1;
+        }
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -48,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F)){
             Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
+            rb.velocity = new Vector2(8f * facingX, rb.velocity.y);
             if (isWalking){
                 FiringOnWalkAttack = true;
             }

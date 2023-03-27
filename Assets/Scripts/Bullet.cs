@@ -6,6 +6,10 @@ public class Bullet : MonoBehaviour
 {
 	public float bulletSpeed;
 	private Rigidbody2D rigidbody2d;
+	public int damageGive;
+	
+	
+	
 	//private GameObject parent;
 
 	// Start is called before the first frame update
@@ -35,9 +39,15 @@ public class Bullet : MonoBehaviour
 		CancelInvoke();
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.tag == "Enemy"){
+	private void OnTriggerEnter2D(Collider2D entity) {
+		
+		if (entity.tag == "Enemy" || entity.tag == "Ground"){
+			entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
 			Destroy(gameObject);
+			
 		}
 	}
+	
+	
+
 }
