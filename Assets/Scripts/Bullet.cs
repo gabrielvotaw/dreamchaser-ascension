@@ -6,6 +6,13 @@ public class Bullet : MonoBehaviour
 {
 	public float bulletSpeed;
 	private Rigidbody2D rigidbody2d;
+<<<<<<< Updated upstream
+=======
+	public int damageGive;
+	
+	
+	
+>>>>>>> Stashed changes
 	//private GameObject parent;
 
 	// Start is called before the first frame update
@@ -35,9 +42,21 @@ public class Bullet : MonoBehaviour
 		CancelInvoke();
 	}
 
+<<<<<<< Updated upstream
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.tag == "Enemy"){
 			Destroy(gameObject);
+=======
+	private void OnTriggerEnter2D(Collider2D entity) {
+		
+		if (entity.tag == "Enemy" || entity.tag == "Ground"){
+			entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
+			Destroy(gameObject);
+			
+>>>>>>> Stashed changes
 		}
 	}
+	
+	
+
 }
