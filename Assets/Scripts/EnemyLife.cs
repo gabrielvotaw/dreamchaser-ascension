@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    [SerializeField] private int health;
-
-    void Start()
-    {
-=======
     public int MaxHealth;
     public int CurrentHealth;
     private Rigidbody2D rb;
@@ -28,16 +22,12 @@ public class EnemyLife : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
->>>>>>> Stashed changes
         
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        
-=======
         if(CurrentHealth <= 0){
             Instantiate(deathBurst, transform.position, transform.rotation);
             gameObject.SetActive(false);
@@ -61,7 +51,6 @@ public class EnemyLife : MonoBehaviour
     }
     public void SetMaxHealth(){
         CurrentHealth = MaxHealth;
->>>>>>> Stashed changes
     }
     public void directionFace(GameObject entity){
         if(entity.transform.position.x >= transform.position.x){
