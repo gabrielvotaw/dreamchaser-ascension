@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    private Vector3 offset = new Vector3(0, 2, -5);
+    private Vector3 offset = new Vector3(0, 0, -5);
     private float smoothTime = 0.25f;
     Vector3 currentVelocity;
 
