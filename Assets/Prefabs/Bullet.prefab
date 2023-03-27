@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -218610625
-  m_SortingLayer: 6
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300040, guid: 6f5c6e1922389384cb1736af0690439b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,3 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 15
+  damageGive: 20
+  bloodBurst: {fileID: 2000029461112005897, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}

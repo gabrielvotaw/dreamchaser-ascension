@@ -7181,6 +7181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1966279049}
     m_Modifications:
+    - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: MaxHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720009, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_Name
       value: Green Slime
@@ -7231,6 +7235,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+--- !u!1001 &2000029460106008741
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2000029461112005897, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_Name
+      value: GreenBloodBurst
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000029461112005898, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
 --- !u!1001 &2713669076341677018
 PrefabInstance:
   m_ObjectHideFlags: 0
