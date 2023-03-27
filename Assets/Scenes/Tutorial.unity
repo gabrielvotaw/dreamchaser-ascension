@@ -7447,8 +7447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &2183352383277519726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7514,7 +7512,6 @@ PrefabInstance:
       objectReference: {fileID: 1215973185}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
->>>>>>> Stashed changes
 --- !u!1001 &2713669076341677018
 PrefabInstance:
   m_ObjectHideFlags: 0
