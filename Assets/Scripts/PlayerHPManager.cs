@@ -20,6 +20,7 @@ public class PlayerHPManager : MonoBehaviour
         if(currentHealth < 0){
             gameObject.SetActive(false);
         }
+
     }
     private IEnumerator VisualIndicator(Color color)
     {
@@ -38,12 +39,12 @@ public class PlayerHPManager : MonoBehaviour
         Debug.Log("Damage restored");
     }
 
-    private void OnTriggerEnter2D(Collider2D entity) {
-		Debug.Log("Damage touched");
-		if (entity.tag == "Enemy"){
-			damagePlayer(20);
-		}
-	}
+    public void OnCollisionEnter2D(Collision2D entity) {
+        Debug.Log("Damage touched");
+        if (entity.gameObject.CompareTag("Enemy")){
+            damagePlayer(20);
+        }
+    }
     
 
 }
