@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int health = 100;
 
     private int MAX_HEALTH = 100;
-    int damage = 10;
+    private int damage = 10;
     public static Action OnPlayerDeath;
     public static Action OnEnemyDeath;
 
@@ -16,10 +16,11 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //test damage and damage indicators
-        /* if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             Damage(damage);
-        } */
+        }
+
     }
 
     public void SetHealth(int maxHealth, int health)
@@ -53,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
             //_healthbar.SetHealth(this.health);
         }
     }
-
+    
     private void Die()
     {
         Destroy(gameObject);
@@ -62,6 +63,18 @@ public class PlayerHealth : MonoBehaviour
             OnPlayerDeath?.Invoke();
         } else {
             OnEnemyDeath?.Invoke();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D entity) {
+		if (entity.tag == "Enemy"){
+			Damage(damage);
+			
+		}
+	}
+    private void HPKill(){
+        if(health == MAX_HEALTH){
+            Damage(40);
         }
     }
 }

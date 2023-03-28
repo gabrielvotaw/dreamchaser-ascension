@@ -15,6 +15,7 @@ public class EnemyLife : MonoBehaviour
     public GameObject deathBurst;
     public float chasing = 4;
     public float speed;
+    public int contactDamage;
 
     private float distance;
 
@@ -60,4 +61,7 @@ public class EnemyLife : MonoBehaviour
             KnockDirect = 1;
         }
     }
+    
+    
+    
 }
