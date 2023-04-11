@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyContactDamage : MonoBehaviour
 {
     public int contactDamage;
+    public GameObject playerCheapFix;
     // Start is called before the first frame update
     void Start()
     {

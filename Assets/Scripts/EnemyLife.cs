@@ -14,16 +14,20 @@ public class EnemyLife : MonoBehaviour
     public GameObject bloodBurst;
     public GameObject deathBurst;
     public float chasing = 4;
+    public float chasingStore;
     public float speed;
+    public float speedStore;
     public int contactDamage;
+    public float stunTimer;
 
     private float distance;
 
     void Start()
     {
         CurrentHealth = MaxHealth;
+        chasingStore = chasing;
+        speedStore = speed;
         rb = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -35,12 +39,19 @@ public class EnemyLife : MonoBehaviour
         }
         distance = Vector2.Distance(transform.position, playerFace.transform.position);
         Vector2 direction = playerFace.transform.position - transform.position;
-
+        Vector2 playerExe = new Vector2(playerFace.transform.position.x, transform.position.y);
         if(CurrentHealth != MaxHealth){
-            chasing = 7;
+            chasing = chasingStore * 2;
         }
         if(distance < chasing){
-            transform.position = Vector2.MoveTowards(this.transform.position, playerFace.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, playerExe, speed * Time.deltaTime);
+        }
+        if(speed == 0 && speedStore != 0){
+            stunTimer += Time.deltaTime;
+            if(stunTimer > 0.5f){
+                stunTimer = 0;
+                speed = speedStore;
+            }
         }
         directionFace(playerFace);
     }
@@ -49,6 +60,7 @@ public class EnemyLife : MonoBehaviour
         CurrentHealth -= damageGive;
 		Instantiate(bloodBurst, transform.position, transform.rotation);
         rb.velocity = new Vector2(KnockBackForce * KnockDirect, KnockBackUp);
+        speed = 0;
     }
     public void SetMaxHealth(){
         CurrentHealth = MaxHealth;
