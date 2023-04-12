@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {   
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator animator;
@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private float facingX = 1f;
     [SerializeField] private float moveSpeed = 7f;
+    private float moveSpeedStore;
     [SerializeField] private float jumpForce = 14f;
     public Transform FirePosition;
     public GameObject Projectile;
@@ -27,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isWalking = false;
     private bool isIdle = false;
     private bool isJumping = false;
+    public float KnockBackForce = 30;
+    public float KnockBackUp = 30;
+    public float stunCounter;
+    public float stunCounterMax;
+    public float gunCounter;
+    public float gunCounterMax;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        stunCounter = stunCounterMax;
+        gunCounter = gunCounterMax;
+        moveSpeedStore = moveSpeed;
     }
 
     // Update is called once per frame
@@ -45,29 +55,56 @@ public class PlayerMovement : MonoBehaviour
         }else if(dirX < 0f){
             facingX = 1;
         }
+        
+        if(stunCounter < stunCounterMax){
+            moveSpeed = 0;
+            stunCounter++;
+        }
+        else{
+            moveSpeed = moveSpeedStore;
+        }
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            rb.velocity = new Vector2(moveSpeed * -1, rb.velocity.y);
+        }
+        if(Input.GetKeyUp(KeyCode.LeftArrow)){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+        if(Input.GetKey(KeyCode.RightArrow)){
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        }
+        if(Input.GetKeyUp(KeyCode.RightArrow)){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-
-        if (Input.GetKeyDown(KeyCode.F)){
-            Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
-            rb.velocity = new Vector2(8f * facingX, rb.velocity.y);
-            if (isWalking){
-                FiringOnWalkAttack = true;
-            }
-            else if (isIdle){
-                FiringAttack = true;
-            }else if (isJumping){
-                FiringOnAir = true;
-            }
-        }else{
-            FiringOnWalkAttack = false;
-            FiringAttack = false;
-            FiringOnAir = false;
+        if(gunCounter <= gunCounterMax){
+            gunCounter++;
         }
+        if(Input.GetKey(KeyCode.F)){
+            if (gunCounter > gunCounterMax){
+                gunCounter = 0;
+                Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
+                rb.velocity = new Vector2(1.5f * facingX, rb.velocity.y);
+                if (isWalking){
+                    FiringOnWalkAttack = true;
+                }
+                else if (isIdle){
+                    FiringAttack = true;
+                }else if (isJumping){
+                    FiringOnAir = true;
+                }
+            }else{
+                
+                FiringOnWalkAttack = false;
+                FiringAttack = false;
+                FiringOnAir = false;
+            }
+        }
+        
 
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && direction)
@@ -148,6 +185,18 @@ public class PlayerMovement : MonoBehaviour
         else if (FiringOnAir)
         {
             animator.SetTrigger("FiringOnAir");
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D entity) {
+        if (entity.gameObject.CompareTag("Ground")){
+            Debug.Log("Dirt touched");
+            //rb.velocity = new Vector2(KnockBackForce*-1, KnockBackUp);
+        }
+        if (entity.gameObject.CompareTag("Enemy")){
+            Debug.Log("Fly touched");
+            rb.velocity = new Vector2(KnockBackForce*facingX, KnockBackUp);
+            
+            stunCounter = 0;
         }
     }
 

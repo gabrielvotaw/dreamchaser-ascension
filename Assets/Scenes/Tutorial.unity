@@ -1649,8 +1649,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426945541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7600002, y: 0.95, z: 10}
-  m_LocalScale: {x: 2.0852246, y: 1.953507, z: 1}
+  m_LocalPosition: {x: -0.2179, y: -0.2994, z: 10}
+  m_LocalScale: {x: 2.3455398, y: 2.1848633, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 541572317}
@@ -4262,7 +4262,7 @@ GameObject:
   - component: {fileID: 1701047562}
   m_Layer: 7
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23355,6 +23355,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6769511442386990197, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
   m_PrefabInstance: {fileID: 7320706519189833267}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2052974492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215973185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4efc48fed085a46956a3d85244f721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
+  KnockBackForce: 100
+  KnockBackUp: 30
+  immune: 1
 --- !u!1001 &2072567243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23646,7 +23663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.67
+      value: -11.73
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23824,6 +23841,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6769511442386990195, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990195, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -23834,6 +23855,30 @@ PrefabInstance:
     - target: {fileID: 6769511442386990197, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: KnockBackUp
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: gunCounterMax
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: KnockBackForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769511442386990199, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+      propertyPath: stunCounterMax
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7320706519533165129, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
       propertyPath: m_Interpolate
@@ -23899,7 +23944,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6769511441950027481, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
 --- !u!1001 &7515604867131101915
 PrefabInstance:
