@@ -178,6 +178,12 @@ MonoBehaviour:
   blackHoleObject: {fileID: 0}
   hurtCounter: 0.25
   shootingCounter: 0.2
+  KnockBackForce: 6
+  KnockBackUp: 12
+  stunCounter: 0
+  stunCounterMax: 15
+  gunCounter: 0
+  gunCounterMax: 17
   groundCheck: {fileID: 3394696584709319639}
   groundCheckRadius: 0.2
   groundLayer:
