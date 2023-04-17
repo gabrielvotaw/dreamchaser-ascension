@@ -189,7 +189,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 384
-  bulletsAmount: 15
+  bulletsAmount: 150
 --- !u!114 &3990351098054430975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 500
-  currentHealth: 0
+  currentHealth: 500
   KnockBackForce: 100
   KnockBackUp: 30
   immune: 1
