@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     public float gunCounter;
     public float gunCounterMax;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -71,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(Input.GetKeyUp(KeyCode.RightArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(0f, rb.velocity.y);
+            
         }
         else if(stunCounter >= stunCounterMax & IsGrounded()){
             rb.velocity = new Vector2(0f, rb.velocity.y);
@@ -79,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+           jumpSoundEffect.Play();
            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
         if(gunCounter <= gunCounterMax){

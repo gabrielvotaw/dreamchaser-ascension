@@ -20,12 +20,14 @@ public class EnemyLife : MonoBehaviour
     public int contactDamage;
     public float stunTimer;
     public bool bulletImmune;
+    public EnemyHealthBar healthBar;
 
     private float distance;
 
     void Start()
     {
         CurrentHealth = MaxHealth;
+        healthBar.SetHealth(CurrentHealth, MaxHealth);
         chasingStore = chasing;
         speedStore = speed;
         rb = GetComponent<Rigidbody2D>();
@@ -59,6 +61,7 @@ public class EnemyLife : MonoBehaviour
 
     public void HurtEnemy(int damageGive){
         CurrentHealth -= damageGive;
+        healthBar.SetHealth(CurrentHealth, MaxHealth);
 		Instantiate(bloodBurst, transform.position, transform.rotation);
         rb.velocity = new Vector2(KnockBackForce * KnockDirect, KnockBackUp);
         speed = 0;
