@@ -9,6 +9,8 @@ public class EnemyLife : MonoBehaviour
     private Rigidbody2D rb;
     public float KnockBackForce;
     public float KnockBackUp;
+    public float playerKnockBackForce;
+    public float playerKnockBackUp;
     public float KnockDirect = 1;
     public GameObject playerFace;
     public GameObject bloodBurst;
@@ -46,7 +48,7 @@ public class EnemyLife : MonoBehaviour
         if(CurrentHealth != MaxHealth){
             chasing = chasingStore * 2;
         }
-        if(distance < chasing){
+        if(ClosePlayer() == true){
             transform.position = Vector2.MoveTowards(this.transform.position, playerExe, speed * Time.deltaTime);
         }
         if(speed == 0 && speedStore != 0){
@@ -58,7 +60,9 @@ public class EnemyLife : MonoBehaviour
         }
         directionFace(playerFace);
     }
-
+    public bool ClosePlayer(){
+        return (distance < chasing);
+    }
     public void HurtEnemy(int damageGive){
         CurrentHealth -= damageGive;
         healthBar.SetHealth(CurrentHealth, MaxHealth);
@@ -68,6 +72,15 @@ public class EnemyLife : MonoBehaviour
     }
     public void SetMaxHealth(){
         CurrentHealth = MaxHealth;
+    }
+
+    public void OnCollisionEnter2D(Collision2D entity) {
+        Debug.Log("Damage touched");
+        if (entity.gameObject.CompareTag("Player")){
+            entity.gameObject.GetComponent<PlayerHPManager>().damagePlayer(contactDamage);
+            entity.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(playerKnockBackForce*-KnockDirect, playerKnockBackUp);
+
+        }
     }
 
     public bool blockBullet(){

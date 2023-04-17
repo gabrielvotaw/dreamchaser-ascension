@@ -20,7 +20,7 @@ public class EnemyShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 2){
+        if(timer > 2 && GetComponent<EnemyLife>().ClosePlayer()){
             timer = 0;
             shoot();
         }

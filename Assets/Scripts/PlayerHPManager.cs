@@ -62,13 +62,7 @@ public class PlayerHPManager : MonoBehaviour
         Debug.Log("Damage restored");
     }
 
-    public void OnCollisionEnter2D(Collision2D entity) {
-        Debug.Log("Damage touched");
-        if (entity.gameObject.CompareTag("Enemy")){
-            damagePlayer(20);
-
-        }
-    }
+    
     
     
 

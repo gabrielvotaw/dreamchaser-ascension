@@ -149,8 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 0
   CurrentHealth: 0
-  KnockBackForce: 0
+  KnockBackForce: 3
   KnockBackUp: 0
+  playerKnockBackForce: 6
+  playerKnockBackUp: 12
   KnockDirect: 1
   playerFace: {fileID: 0}
   bloodBurst: {fileID: 0}
@@ -159,7 +161,7 @@ MonoBehaviour:
   chasingStore: 0
   speed: 0
   speedStore: 0
-  contactDamage: 0
+  contactDamage: 20
   stunTimer: 0
   bulletImmune: 0
   healthBar: {fileID: 1754881174923535439}
@@ -200,7 +202,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 100, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8321543556583874134
 MonoBehaviour:
@@ -405,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8321543556583874134}
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: 2, z: 0}
 --- !u!1 &6488377759199227948
 GameObject:
   m_ObjectHideFlags: 0

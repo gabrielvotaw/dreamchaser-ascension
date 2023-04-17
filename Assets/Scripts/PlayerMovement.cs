@@ -28,12 +28,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isWalking = false;
     private bool isIdle = false;
     private bool isJumping = false;
+    private float stayDown = 0f;
     public float KnockBackForce = 30;
     public float KnockBackUp = 30;
     public float stunCounter;
     public float stunCounterMax;
     public float gunCounter;
     public float gunCounterMax;
+    
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         else if(stunCounter >= stunCounterMax & IsGrounded()){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
+        
         
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -192,13 +195,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void OnCollisionEnter2D(Collision2D entity) {
-        if (entity.gameObject.CompareTag("Ground")){
-            Debug.Log("Dirt touched");
-            //rb.velocity = new Vector2(KnockBackForce*-1, KnockBackUp);
-        }
+        
         if (entity.gameObject.CompareTag("Enemy")){
-            Debug.Log("Fly touched");
-            rb.velocity = new Vector2(KnockBackForce*facingX, KnockBackUp);
             
             stunCounter = 0;
         }

@@ -8,6 +8,12 @@ public class EnemyBullet : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     public float force;
+    private float projectileTimer;
+    public float projectileTime; 
+    public int contactDamage;
+    public float KnockBackForce;
+    public float KnockBackUp;
+    public float KnockDirect = 1;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -15,5 +21,37 @@ public class EnemyBullet : MonoBehaviour
 
         Vector2 direction = player.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        
     }
-}
+
+    void Update(){
+        projectileTimer += Time.deltaTime;
+        if(projectileTimer > projectileTime){
+            Destroy(gameObject);
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D entity) {
+		
+		if (entity.gameObject.CompareTag("Player")){
+            entity.gameObject.GetComponent<PlayerHPManager>().damagePlayer(contactDamage);
+            entity.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(KnockBackForce*-KnockDirect, KnockBackUp);
+            Destroy(gameObject);
+        }
+            if (entity.tag == "Ground"){
+            Destroy(gameObject);
+
+        }
+
+        }
+        
+        public void directionFace(GameObject entity){
+        if(entity.transform.position.x >= transform.position.x){
+            KnockDirect = -1;
+        }
+        else{
+            KnockDirect = 1;
+        }
+    }
+	}

@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 	public float bulletSpeed;
 	private Rigidbody2D rigidbody2d;
 	public int damageGive;
+    private float projectileTimer;
+    public float projectileTime; 
 	
 	
 	
@@ -18,7 +20,12 @@ public class Bullet : MonoBehaviour
 		rigidbody2d = GetComponent<Rigidbody2D>();
 		//parent = GetComponent<GameObject>();
     }
-
+	void Update(){
+		projectileTimer += Time.deltaTime;
+        if(projectileTimer > projectileTime){
+            Destroy(gameObject);
+        }
+	}
 	private void OnBecameVisible()
 	{
 		rigidbody2d.velocity = transform.right * bulletSpeed;
@@ -44,6 +51,7 @@ public class Bullet : MonoBehaviour
 		if (entity.tag == "Enemy" || entity.tag == "Ground"){
 			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == false){
 				entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
+				
 			}
 			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == true){
 				entity.gameObject.GetComponent<EnemyLife>().shieldCrack();
@@ -52,6 +60,7 @@ public class Bullet : MonoBehaviour
 			
 		}
 	}
+	
 	
 	
 
