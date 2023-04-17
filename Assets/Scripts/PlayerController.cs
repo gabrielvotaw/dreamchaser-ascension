@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
 	public float hurtCounter;
 	public float shootingCounter;
 
+	private float moveSpeedStore;
+	public float KnockBackForce = 30;
+    public float KnockBackUp = 30;
+    public float stunCounter;
+    public float stunCounterMax;
+    public float gunCounter;
+    public float gunCounterMax;
+
 	#region Ground check properties
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -54,6 +62,10 @@ public class PlayerController : MonoBehaviour
 		facingRight = true;
 		wait = new WaitForSeconds(1.5f);
 
+		stunCounter = stunCounterMax;
+        gunCounter = gunCounterMax;
+        moveSpeedStore = playerSpeed;
+
 		BulletPool.bulletPoolInstance.totalBulletsInPool = bulletsAmount;
 		blackHoleObject.SetActive(false);
 	}
@@ -62,6 +74,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 		isPlayerOnGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);		
+
+		if(stunCounter < stunCounterMax){
+            playerSpeed = 0;
+            stunCounter++;
+        }
+        else{
+            playerSpeed = moveSpeedStore;
+        }
+		if(gunCounter <= gunCounterMax){
+            gunCounter++;
+        }
 
 		if (vHurtCounter <= 0f)
 		{
@@ -145,27 +168,30 @@ public class PlayerController : MonoBehaviour
 		#region Shooting
 		else if (Input.GetKeyDown(KeyCode.F))
 		{
-			playerAnimator.SetBool(isShootingID, true);
-			if (isPlayerOnGround)
-			{
-				shootingPoint.position = new Vector3(shootingPoint.position.x, transform.position.y - 0.04f, shootingPoint.position.z);
-				if (Math.Abs(playerRigidbody.velocity.x) < 0.05f)
+			if (gunCounter > gunCounterMax){
+				gunCounter = 0;
+				playerAnimator.SetBool(isShootingID, true);
+				if (isPlayerOnGround)
 				{
-					playerAnimator.SetTrigger(shootingID);
+					shootingPoint.position = new Vector3(shootingPoint.position.x, transform.position.y - 0.04f, shootingPoint.position.z);
+					if (Math.Abs(playerRigidbody.velocity.x) < 0.05f)
+					{
+						playerAnimator.SetTrigger(shootingID);
+					}
+					else
+					{
+						playerAnimator.SetBool(isShootingID, true);
+						vShootingCounter = shootingCounter;
+					}	
 				}
 				else
 				{
-					playerAnimator.SetBool(isShootingID, true);
-					vShootingCounter = shootingCounter;
-				}	
-			}
-			else
-			{
-				shootingPoint.position = new Vector3(shootingPoint.position.x, transform.position.y + 0.22f, shootingPoint.position.z);
-				playerAnimator.SetTrigger(shootingOnAirID);
-			}
+					shootingPoint.position = new Vector3(shootingPoint.position.x, transform.position.y + 0.22f, shootingPoint.position.z);
+					playerAnimator.SetTrigger(shootingOnAirID);
+				}
 
-			Shoot();
+				Shoot();
+			}
 		}
 		#endregion
 

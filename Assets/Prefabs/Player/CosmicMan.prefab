@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3394696584393304244}
   - component: {fileID: 3394696584393304247}
   - component: {fileID: 3394696584393304246}
+  - component: {fileID: 3990351098054430975}
   m_Layer: 0
   m_Name: CosmicMan
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3394696584393304248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.244, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3394696584709319639}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: 6f5c6e1922389384cb1736af0690439b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3394696584393304251
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08221759, y: -0.13702929}
+  m_Offset: {x: -0.08643779, y: -0.1397127}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41273168, y: 0.71028113}
+  m_Size: {x: 0.5727554, y: 0.6276957}
   m_EdgeRadius: 0
 --- !u!50 &3394696584393304247
 Rigidbody2D:
@@ -152,7 +153,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -170,19 +171,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54547750069074e86b13b103a335a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
-  jumpingSpeed: 5
+  playerSpeed: 7
+  jumpingSpeed: 14
   shootingPoint: {fileID: 3394696584756512695}
   bulletObject: {fileID: 232917027881927301, guid: 4d48fdec0d0e79841bb2fa51d0748e1a, type: 3}
   blackHoleObject: {fileID: 0}
   hurtCounter: 0.25
   shootingCounter: 0.2
+  KnockBackForce: 6
+  KnockBackUp: 12
+  stunCounter: 0
+  stunCounterMax: 15
+  gunCounter: 0
+  gunCounterMax: 17
   groundCheck: {fileID: 3394696584709319639}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   bulletsAmount: 15
+--- !u!114 &3990351098054430975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394696584393304248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4efc48fed085a46956a3d85244f721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
+  KnockBackForce: 100
+  KnockBackUp: 30
+  immune: 1
 --- !u!1 &3394696584709319636
 GameObject:
   m_ObjectHideFlags: 0
