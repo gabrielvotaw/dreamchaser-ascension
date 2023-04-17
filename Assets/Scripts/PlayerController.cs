@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public float gunCounter;
     public float gunCounterMax;
 
+	//fire rate 
+	public float fireRate = 0.5F;
+  	private float nextFire = 0.0F;
+
 	#region Ground check properties
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -166,9 +170,10 @@ public class PlayerController : MonoBehaviour
 		#endregion
 
 		#region Shooting
-		else if (Input.GetKeyDown(KeyCode.F))
+		else if (Input.GetKey(KeyCode.F) && Time.time > nextFire)
 		{
-			if (gunCounter > gunCounterMax){
+			nextFire = Time.time + fireRate; //fire rate
+			if (gunCounter > gunCounterMax){ //
 				gunCounter = 0;
 				playerAnimator.SetBool(isShootingID, true);
 				if (isPlayerOnGround)
