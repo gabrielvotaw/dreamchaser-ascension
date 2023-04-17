@@ -42,8 +42,11 @@ public class Bullet : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D entity) {
 		
 		if (entity.tag == "Enemy" || entity.tag == "Ground"){
-			if(entity.tag == "Enemy"){
+			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == false){
 				entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
+			}
+			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == true){
+				entity.gameObject.GetComponent<EnemyLife>().shieldCrack();
 			}
 			Destroy(gameObject);
 			

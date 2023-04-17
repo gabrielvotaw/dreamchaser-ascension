@@ -57,25 +57,25 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if(stunCounter < stunCounterMax){
-            moveSpeed = 0;
             stunCounter++;
         }
-        else{
-            moveSpeed = moveSpeedStore;
-        }
         dirX = Input.GetAxisRaw("Horizontal");
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        if(Input.GetKey(KeyCode.LeftArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(moveSpeed * -1, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow)){
+        else if(Input.GetKeyUp(KeyCode.LeftArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
+        else if(Input.GetKey(KeyCode.RightArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow)){
+        else if(Input.GetKeyUp(KeyCode.RightArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
+        else if(stunCounter >= stunCounterMax & IsGrounded()){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+        
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

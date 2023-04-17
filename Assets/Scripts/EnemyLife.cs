@@ -19,6 +19,7 @@ public class EnemyLife : MonoBehaviour
     public float speedStore;
     public int contactDamage;
     public float stunTimer;
+    public bool bulletImmune;
 
     private float distance;
 
@@ -64,6 +65,13 @@ public class EnemyLife : MonoBehaviour
     }
     public void SetMaxHealth(){
         CurrentHealth = MaxHealth;
+    }
+
+    public bool blockBullet(){
+        return bulletImmune;
+    }
+    public void shieldCrack(){
+        bulletImmune = false;
     }
     public void directionFace(GameObject entity){
         if(entity.transform.position.x >= transform.position.x){
