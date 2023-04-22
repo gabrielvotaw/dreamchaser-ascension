@@ -165,6 +165,7 @@ MonoBehaviour:
   stunTimer: 0
   bulletImmune: 0
   healthBar: {fileID: 1754881174923535439}
+  damageReduction: 1
 --- !u!1 &2191854684310830793
 GameObject:
   m_ObjectHideFlags: 0

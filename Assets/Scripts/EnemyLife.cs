@@ -23,6 +23,8 @@ public class EnemyLife : MonoBehaviour
     public float stunTimer;
     public bool bulletImmune;
     public EnemyHealthBar healthBar;
+    public float damageReduction = 1;
+    public float speedMod = 1;
 
     private float distance;
 
@@ -49,7 +51,7 @@ public class EnemyLife : MonoBehaviour
             chasing = chasingStore * 2;
         }
         if(ClosePlayer() == true){
-            transform.position = Vector2.MoveTowards(this.transform.position, playerExe, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, playerExe, speed * speedMod * Time.deltaTime);
         }
         if(speed == 0 && speedStore != 0){
             stunTimer += Time.deltaTime;
@@ -64,7 +66,7 @@ public class EnemyLife : MonoBehaviour
         return (distance < chasing);
     }
     public void HurtEnemy(int damageGive){
-        CurrentHealth -= damageGive;
+        CurrentHealth -= (int) Mathf.Round(damageGive * damageReduction);
         healthBar.SetHealth(CurrentHealth, MaxHealth);
 		Instantiate(bloodBurst, transform.position, transform.rotation);
         rb.velocity = new Vector2(KnockBackForce * KnockDirect, KnockBackUp);
@@ -82,12 +84,17 @@ public class EnemyLife : MonoBehaviour
 
         }
     }
-
+    public void reductionChange(int reduce){
+        damageReduction = reduce; 
+    }
     public bool blockBullet(){
         return bulletImmune;
     }
     public void shieldCrack(){
         bulletImmune = false;
+    }
+    public void speedChange(float mod){
+        speedMod = mod;
     }
     public void directionFace(GameObject entity){
         if(entity.transform.position.x >= transform.position.x){
