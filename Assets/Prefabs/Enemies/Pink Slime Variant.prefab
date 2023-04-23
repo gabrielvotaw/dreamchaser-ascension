@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: MaxHealth
-      value: 200
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: bloodBurst
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: KnockBackUp
-      value: 12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: bulletImmune
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720004, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: KnockBackForce
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720005, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_IsTrigger
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ecd156bb53a17c2478abb30bfbc16b32, type: 3}
     - target: {fileID: 1951229230728720009, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_Name
-      value: Pink Slime
+      value: Pink Slime Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720010, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_Mass
@@ -89,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.28
+      value: -9.19
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -221,3 +221,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+--- !u!1 &5553749074548539457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1951229230728720009, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+  m_PrefabInstance: {fileID: 6198864030097960648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005400028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553749074548539457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8837e968e29a740b8780de06399793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7173289589406509066, guid: 43578193bdcd5084fb27cfd5b317a06a, type: 3}
+  bulletPos: {fileID: 5553749074548539459}
+  fireTimer: 1.5
+  shootOn: 1
+--- !u!114 &2005400029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553749074548539457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401d1f84abd1d564c9412cbf74bed1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 1
+--- !u!4 &5553749074548539459 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1951229230728720011, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+  m_PrefabInstance: {fileID: 6198864030097960648}
+  m_PrefabAsset: {fileID: 0}

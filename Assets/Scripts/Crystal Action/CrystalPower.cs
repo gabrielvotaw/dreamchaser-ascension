@@ -17,12 +17,12 @@ public class CrystalPower : MonoBehaviour
         if(power == true){
             gameObject.GetComponent<EnemyLife>().reductionChange(0);
             gameObject.GetComponent<EnemyShooting>().shootingChange(true);
-            gameObject.GetComponent<EnemyLife>().speedChange(0);
+            gameObject.GetComponent<EnemyMovement>().speedChange(0);
         }
         else{
             gameObject.GetComponent<EnemyLife>().reductionChange(1);
             gameObject.GetComponent<EnemyShooting>().shootingChange(false);
-            gameObject.GetComponent<EnemyLife>().speedChange(1);
+            gameObject.GetComponent<EnemyMovement>().speedChange(1);
         }
 
     }

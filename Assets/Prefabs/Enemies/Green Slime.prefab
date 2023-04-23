@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1951229230728720010}
   - component: {fileID: 1951229230728720005}
   - component: {fileID: 1951229230728720004}
+  - component: {fileID: 6822109375852934465}
+  - component: {fileID: -800930196012577717}
   m_Layer: 0
   m_Name: Green Slime
   m_TagString: Enemy
@@ -147,25 +149,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9edcbcbfe3949c2950541502c88e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
+  MaxHealth: 200
   CurrentHealth: 0
-  KnockBackForce: 3
-  KnockBackUp: 0
-  playerKnockBackForce: 6
-  playerKnockBackUp: 12
-  KnockDirect: 1
-  playerFace: {fileID: 0}
-  bloodBurst: {fileID: 0}
-  deathBurst: {fileID: 0}
-  chasing: 4
-  chasingStore: 0
-  speed: 0
-  speedStore: 0
-  contactDamage: 20
-  stunTimer: 0
+  playerFace: {fileID: 6769511442386990192, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+  bloodBurst: {fileID: 2000029461112005897, guid: 42a85f49da30a0d47b07cf727d0595de, type: 3}
+  deathBurst: {fileID: 3128369019817092997, guid: f4912037e0d768648a46a5375cc15db8, type: 3}
   bulletImmune: 0
   healthBar: {fileID: 1754881174923535439}
   damageReduction: 1
+--- !u!114 &6822109375852934465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951229230728720009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d586a869ab62ff4591e35bc632507d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 10
+  playerFace: {fileID: 6769511442386990192, guid: 68cc9c52da06b954d81a1871b2c25c33, type: 3}
+  playerKnockBackForce: 6
+  playerKnockBackUp: 12
+  enemyMove: {fileID: -800930196012577717}
+--- !u!114 &-800930196012577717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951229230728720009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79595aecb0df9834aa6e5e83f6040fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chasing: 4
+  chasingStore: 0
+  speed: 4
+  speedStore: 0
+  speedMod: 1
+  KnockBackForce: 4
+  KnockBackUp: 4
+  KnockDirect: 1
+  playerFace: {fileID: 0}
+  enemyLive: {fileID: 1951229230728720004}
+  checkBool: 0
+  checkFloat: 0
 --- !u!1 &2191854684310830793
 GameObject:
   m_ObjectHideFlags: 0
