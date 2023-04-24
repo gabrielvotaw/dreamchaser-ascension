@@ -6,6 +6,7 @@ public class CrystalPower : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool power = true;
+    public GameObject iAmSpecial;
     void Start()
     {
         
@@ -18,11 +19,13 @@ public class CrystalPower : MonoBehaviour
             gameObject.GetComponent<EnemyLife>().reductionChange(0);
             gameObject.GetComponent<EnemyShooting>().shootingChange(true);
             gameObject.GetComponent<EnemyMovement>().speedChange(0);
+            iAmSpecial.gameObject.SetActive(true);
         }
         else{
             gameObject.GetComponent<EnemyLife>().reductionChange(1);
             gameObject.GetComponent<EnemyShooting>().shootingChange(false);
             gameObject.GetComponent<EnemyMovement>().speedChange(1);
+            iAmSpecial.gameObject.SetActive(false);
         }
 
     }

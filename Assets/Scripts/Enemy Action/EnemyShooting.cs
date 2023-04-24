@@ -9,11 +9,11 @@ public class EnemyShooting : MonoBehaviour
 
     private float fireCount;
     public float fireTimer;
-    private float reloadCount;
-    private int ammoCount;
+    public float reloadCount;
+    public int ammoCount;
     public int ammoMax;
     public float reloadTimer;
-    private bool outAmmo = false;
+    public bool outAmmo = false;
 
     public bool shootOn = true;
 
@@ -34,11 +34,11 @@ public class EnemyShooting : MonoBehaviour
             ammoCount++;
             shoot();
         }
-        if(ammoCount > ammoMax){
+        if(ammoCount > ammoMax && !outAmmo){
             outAmmo = true;
             reloadCount = 0;
         }
-        if(reloadCount > reloadTimer){
+        if(reloadCount > reloadTimer && outAmmo){
             ammoCount = 0;
             outAmmo = false;
         }

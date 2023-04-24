@@ -27,7 +27,6 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chasingStore = chasing;
         speedStore = speed;
     }
 
@@ -47,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if(enemyLive.CurrentHealth != enemyLive.MaxHealth){
-            chasing = chasingStore * 2;
+            chasing = chasingStore;
         }
         if(ClosePlayer() == true){
             transform.position = Vector2.MoveTowards(this.transform.position, playerExe, speed * speedMod * Time.deltaTime);
