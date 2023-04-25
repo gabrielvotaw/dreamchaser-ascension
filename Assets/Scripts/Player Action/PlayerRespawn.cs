@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
 public class PlayerRespawn : MonoBehaviour
 {
-    public Vector3 respawnPoint;
-
+    // just resets the level now when player dies or falls off level
     public void RespawnNow(){
-        transform.position = respawnPoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
