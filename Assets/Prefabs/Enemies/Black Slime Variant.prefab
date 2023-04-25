@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: chasing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: KnockBackUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: chasingStore
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: KnockBackForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1168510004970905355, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -142,6 +162,10 @@ PrefabInstance:
     - target: {fileID: 6756905111690387972, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822109375852934465, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
+      propertyPath: contactDamage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6974398012078672111, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_AnchorMax.y

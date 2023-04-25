@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyContactDamage : MonoBehaviour
+public class EnemyExplosion : MonoBehaviour
 {
     public int contactDamage;
     public GameObject playerFace;
@@ -10,7 +10,7 @@ public class EnemyContactDamage : MonoBehaviour
     
     public float playerKnockBackForce;
     public float playerKnockBackUp;
-    public EnemyMovement enemyMove;
+    public GameObject enemySelf;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,17 +23,12 @@ public class EnemyContactDamage : MonoBehaviour
         
     }
     
-    public void OnCollisionEnter2D(Collision2D entity) {
+    public void OnTriggerEnter2D(Collider2D entity) {
+      Debug.Log("Damage touched");
       if (entity.gameObject.CompareTag("Player")){
           entity.gameObject.GetComponent<PlayerHPManager>().damagePlayer(contactDamage);
-          entity.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(playerKnockBackForce*-enemyMove.KnockDirect, playerKnockBackUp);
+          entity.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(playerKnockBackForce*-enemySelf.gameObject.GetComponent<EnemyMovement>().KnockDirect, playerKnockBackUp);
 
       }
   }
-    public void damageOff(){
-      contactDamage = 0;
-      playerKnockBackForce = 0;
-      playerKnockBackUp = 0;
-
-    }
 }

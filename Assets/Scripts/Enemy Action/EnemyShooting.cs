@@ -6,6 +6,7 @@ public class EnemyShooting : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
+    public EnemyMovement enemyMove;
 
     private float fireCount;
     public float fireTimer;
@@ -16,11 +17,13 @@ public class EnemyShooting : MonoBehaviour
     public bool outAmmo = false;
 
     public bool shootOn = true;
+    public bool bounceMode = false;
+    public float KnockBackForceStore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        KnockBackForceStore = enemyMove.KnockBackForce;
     }
 
     // Update is called once per frame
@@ -28,20 +31,43 @@ public class EnemyShooting : MonoBehaviour
     {
         fireCount += Time.deltaTime;
         reloadCount += Time.deltaTime;
-
-        if(fireCount > fireTimer && GetComponent<EnemyMovement>().ClosePlayer() && shootOn && !outAmmo){
-            fireCount = 0;
-            ammoCount++;
-            shoot();
+        if(bounceMode == false){
+            if(fireCount > fireTimer && GetComponent<EnemyMovement>().ClosePlayer() && shootOn && !outAmmo){
+                fireCount = 0;
+                ammoCount++;
+                shoot();
+            }
+            if(ammoCount > ammoMax && !outAmmo){
+                outAmmo = true;
+                reloadCount = 0;
+            }
+            if(reloadCount > reloadTimer && outAmmo){
+                ammoCount = 0;
+                outAmmo = false;
+            }
         }
-        if(ammoCount > ammoMax && !outAmmo){
-            outAmmo = true;
-            reloadCount = 0;
+        else{
+            if(GetComponent<EnemyMovement>().ClosePlayer()){
+                enemyMove.KnockBackForce = KnockBackForceStore;
+            }
+            else{
+                enemyMove.KnockBackForce = 0;
+            }
+            if(fireCount > fireTimer  && shootOn && !outAmmo){
+                fireCount = 0;
+                ammoCount++;
+                shoot();
+            }
+            if(ammoCount > ammoMax && !outAmmo){
+                outAmmo = true;
+                reloadCount = 0;
+            }
+            if(reloadCount > reloadTimer && outAmmo){
+                ammoCount = 0;
+                outAmmo = false;
+            }
         }
-        if(reloadCount > reloadTimer && outAmmo){
-            ammoCount = 0;
-            outAmmo = false;
-        }
+        
         void shoot(){
             Instantiate(bullet, bulletPos.position, Quaternion.identity);
         }

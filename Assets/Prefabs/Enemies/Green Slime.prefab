@@ -157,6 +157,11 @@ MonoBehaviour:
   bulletImmune: 0
   healthBar: {fileID: 1754881174923535439}
   damageReduction: 1
+  deathTime: 0
+  deathCount: 0
+  cheapKnock: 1
+  cheapKnockStore: 0
+  deathFlash: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &6822109375852934465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,12 +192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasing: 4
-  chasingStore: 0
-  speed: 4
+  chasingStore: 6
+  speed: 1
   speedStore: 0
   speedMod: 1
-  KnockBackForce: 4
-  KnockBackUp: 4
+  KnockBackForce: 6
+  KnockBackUp: 0
   KnockDirect: 1
   playerFace: {fileID: 0}
   enemyLive: {fileID: 1951229230728720004}

@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: RaviHiding
+    uniqueID: 3006039957
+    locked: 0
   - name: Background
     uniqueID: 1584709559
     locked: 0

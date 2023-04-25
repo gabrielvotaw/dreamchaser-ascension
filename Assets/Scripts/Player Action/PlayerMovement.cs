@@ -201,6 +201,13 @@ public class PlayerMovement : MonoBehaviour
             stunCounter = 0;
         }
     }
+    public void OnTriggerEnter2D(Collider2D entity) {
+        
+        if (entity.gameObject.CompareTag("Enemy")){
+            
+            stunCounter = 0;
+        }
+    }
 
 }
 
