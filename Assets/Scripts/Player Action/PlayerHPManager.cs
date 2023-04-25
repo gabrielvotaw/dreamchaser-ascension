@@ -31,9 +31,6 @@ public class PlayerHPManager : MonoBehaviour
     {
         if(currentHealth <= 0){
             gameObject.SetActive(false);
-            currentHealth = maxHealth;
-            gameObject.SetActive(true);
-            StartCoroutine(VisualIndicator(Color.white));
             playerRespawn.RespawnNow();
 
         }
