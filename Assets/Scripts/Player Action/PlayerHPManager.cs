@@ -18,7 +18,6 @@ public class PlayerHPManager : MonoBehaviour
         
         playerRB = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        Debug.Log("Damage started");
     }
 
     // Update is called once per frame
@@ -26,6 +25,9 @@ public class PlayerHPManager : MonoBehaviour
     {
         if(currentHealth <= 0){
             gameObject.SetActive(false);
+        }
+        if(currentHealth > maxHealth){
+            currentHealth = maxHealth;
         }
 
     }
@@ -50,25 +52,16 @@ public class PlayerHPManager : MonoBehaviour
     public void damagePlayer(int damage){
         
         damage = damage * immune;
-        Debug.Log(KnockBackForce);
         currentHealth -= damage;
         if(damage != 0){
             StartCoroutine(VisualIndicator(Color.red));
         }
-        Debug.Log("Damage taken");
     }
     public void SetMaxHealth(){
         currentHealth = maxHealth;
-        Debug.Log("Damage restored");
     }
 
-    public void OnCollisionEnter2D(Collision2D entity) {
-        Debug.Log("Damage touched");
-        if (entity.gameObject.CompareTag("Enemy")){
-            damagePlayer(20);
-
-        }
-    }
+    
     
     
 

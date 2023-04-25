@@ -28,12 +28,16 @@ public class PlayerMovement : MonoBehaviour
     private bool isWalking = false;
     private bool isIdle = false;
     private bool isJumping = false;
+    private float stayDown = 0f;
     public float KnockBackForce = 30;
     public float KnockBackUp = 30;
     public float stunCounter;
     public float stunCounterMax;
     public float gunCounter;
     public float gunCounterMax;
+    
+
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -57,28 +61,31 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if(stunCounter < stunCounterMax){
-            moveSpeed = 0;
             stunCounter++;
         }
-        else{
-            moveSpeed = moveSpeedStore;
-        }
         dirX = Input.GetAxisRaw("Horizontal");
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        if(Input.GetKey(KeyCode.LeftArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(moveSpeed * -1, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow)){
+        else if(Input.GetKeyUp(KeyCode.LeftArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
+        else if(Input.GetKey(KeyCode.RightArrow) && stunCounter >= stunCounterMax){
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow)){
+        else if(Input.GetKeyUp(KeyCode.RightArrow) && stunCounter >= stunCounterMax){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+            
+        }
+        else if(stunCounter >= stunCounterMax & IsGrounded()){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
+        
+        
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+           jumpSoundEffect.Play();
            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
         if(gunCounter <= gunCounterMax){
@@ -188,13 +195,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void OnCollisionEnter2D(Collision2D entity) {
-        if (entity.gameObject.CompareTag("Ground")){
-            Debug.Log("Dirt touched");
-            //rb.velocity = new Vector2(KnockBackForce*-1, KnockBackUp);
-        }
+        
         if (entity.gameObject.CompareTag("Enemy")){
-            Debug.Log("Fly touched");
-            rb.velocity = new Vector2(KnockBackForce*facingX, KnockBackUp);
+            
+            stunCounter = 0;
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D entity) {
+        
+        if (entity.gameObject.CompareTag("Enemy")){
             
             stunCounter = 0;
         }

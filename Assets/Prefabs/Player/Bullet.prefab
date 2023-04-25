@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 15
   damageGive: 20
+  projectileTime: 5

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3128369019817092997, guid: f4912037e0d768648a46a5375cc15db8, type: 3}
       propertyPath: m_Name
-      value: BigBlueBloodBurst
+      value: BigBlueBloodBurst Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3128369019817092998, guid: f4912037e0d768648a46a5375cc15db8, type: 3}
       propertyPath: m_RootOrder
