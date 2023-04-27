@@ -11,6 +11,8 @@ public class EnemyExplosion : MonoBehaviour
     public float playerKnockBackForce;
     public float playerKnockBackUp;
     public GameObject enemySelf;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +32,5 @@ public class EnemyExplosion : MonoBehaviour
           entity.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(playerKnockBackForce*-enemySelf.gameObject.GetComponent<EnemyMovement>().KnockDirect, playerKnockBackUp);
 
       }
-  }
+    }
 }

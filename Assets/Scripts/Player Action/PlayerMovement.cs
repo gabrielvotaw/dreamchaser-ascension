@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     public Transform FirePosition;
     public GameObject Projectile;
+    public GameObject BombShot;
     private bool direction = true;
     private enum MovementState { idle, running, jumping, falling }
     MovementState state;
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     public float stunCounterMax;
     public float gunCounter;
     public float gunCounterMax;
+    public float bombCounter;
+    public float bombCounterMax;
     
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -48,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         stunCounter = stunCounterMax;
         gunCounter = gunCounterMax;
+        bombCounter = bombCounterMax;
         moveSpeedStore = moveSpeed;
     }
 
@@ -91,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
         if(gunCounter <= gunCounterMax){
             gunCounter++;
         }
+        if(bombCounter <= bombCounterMax){
+            bombCounter++;
+        }
         if(Input.GetKey(KeyCode.F)){
             if (gunCounter > gunCounterMax){
                 gunCounter = 0;
@@ -111,7 +118,29 @@ public class PlayerMovement : MonoBehaviour
                 FiringOnAir = false;
             }
         }
-        
+        if(Input.GetKey(KeyCode.D)){
+            gameObject.GetComponent<PlayerBladeAction>().bladeSwing();
+        }
+        if(Input.GetKey(KeyCode.S)){
+            if (bombCounter > bombCounterMax){
+                bombCounter = 0;
+                Instantiate(BombShot, FirePosition.position, FirePosition.rotation);// where to spawn projectile
+                rb.velocity = new Vector2(1.5f * facingX, rb.velocity.y);
+                if (isWalking){
+                    FiringOnWalkAttack = true;
+                }
+                else if (isIdle){
+                    FiringAttack = true;
+                }else if (isJumping){
+                    FiringOnAir = true;
+                }
+            }else{
+                
+                FiringOnWalkAttack = false;
+                FiringAttack = false;
+                FiringOnAir = false;
+            }
+        }
 
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && direction)
@@ -207,6 +236,10 @@ public class PlayerMovement : MonoBehaviour
             
             stunCounter = 0;
         }
+    }
+
+    public float getFace(){
+        return facingX;
     }
 
 }
