@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     public float gunCounterMax;
     public float bombCounter;
     public float bombCounterMax;
+    public float bladeCounter;
+    public float bladeCounterMax;
     
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -53,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         stunCounter = stunCounterMax;
         gunCounter = gunCounterMax;
         bombCounter = bombCounterMax;
+        bladeCounter = bladeCounterMax;
         moveSpeedStore = moveSpeed;
     }
 
@@ -99,8 +102,15 @@ public class PlayerMovement : MonoBehaviour
         if(bombCounter <= bombCounterMax){
             bombCounter++;
         }
+<<<<<<< Updated upstream
         if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)){
             bulletSoundEffect.Play();
+=======
+        if(bladeCounter <= bladeCounterMax){
+            bladeCounter++;
+        }
+        if(Input.GetKey(KeyCode.F)){
+>>>>>>> Stashed changes
             if (gunCounter > gunCounterMax){
                 gunCounter = 0;
                 Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
@@ -120,8 +130,12 @@ public class PlayerMovement : MonoBehaviour
                 FiringOnAir = false;
             }
         }
-        if(Input.GetKey(KeyCode.D)){
-            gameObject.GetComponent<PlayerBladeAction>().bladeSwing();
+        if(Input.GetKey(KeyCode.D) && stunCounter >= stunCounterMax){
+            if(bladeCounter > bladeCounterMax){
+                bladeCounter = 0;
+                stunCounter = 0;
+                gameObject.GetComponent<PlayerBladeAction>().bladeSwing();
+            }
         }
         if(Input.GetKey(KeyCode.S)){
             if (bombCounter > bombCounterMax){
@@ -145,12 +159,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && direction)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && direction && stunCounter >= stunCounterMax)
         {
             transform.Rotate(0f, 180f, 0f);
             direction = false;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && !direction)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !direction && stunCounter >= stunCounterMax)
         {
             transform.Rotate(0f, 180f, 0f);
             direction = true;

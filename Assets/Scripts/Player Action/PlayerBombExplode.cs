@@ -6,10 +6,12 @@ public class PlayerBombExplode : MonoBehaviour
 {
     public float bulletSpeed;
 	private Rigidbody2D rigidbody2d;
+	private SpriteRenderer spriteRend;
 	public int damageGive;
     public float projectileTimer;
     public float projectileTime; 
     public GameObject lazyBoom;
+	public Color vanish;
 	
 	
 	
@@ -19,11 +21,16 @@ public class PlayerBombExplode : MonoBehaviour
 	void Start()
     {
 		rigidbody2d = GetComponent<Rigidbody2D>();
+		rigidbody2d.velocity = transform.right * bulletSpeed;
+		spriteRend = GetComponent<SpriteRenderer>();
 		//parent = GetComponent<GameObject>();
     }
 	void Update(){
 		projectileTimer += Time.deltaTime;
         if(projectileTimer > projectileTime - 0.5){
+			rigidbody2d.velocity = new Vector2(0f, 0f);
+			spriteRend.color = vanish;
+			GetComponent<Rigidbody2D>().isKinematic = true;
             lazyBoom.gameObject.SetActive(true);
 
         }
@@ -34,7 +41,7 @@ public class PlayerBombExplode : MonoBehaviour
     }
     private void OnBecameVisible()
 	{
-		rigidbody2d.velocity = transform.right * bulletSpeed;
+		
 	
 	}
 
@@ -51,7 +58,7 @@ public class PlayerBombExplode : MonoBehaviour
 		
 		if (entity.tag == "Enemy"){
 			
-			projectileTimer = projectileTime - 0.5f;
+			projectileTimer = projectileTime - 1f;
 			
 		} 
 	}

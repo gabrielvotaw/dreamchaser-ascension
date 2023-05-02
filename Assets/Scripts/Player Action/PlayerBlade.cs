@@ -22,7 +22,7 @@ public class PlayerBlade : MonoBehaviour
 		
         if(entity.tag == "Enemy" && damageOn){
             entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
-            damageOn = false;
+            
             if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == true){
                 entity.gameObject.GetComponent<EnemyLife>().shieldCrack();
                 //A sound effect should play.

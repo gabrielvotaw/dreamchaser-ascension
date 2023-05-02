@@ -53,9 +53,6 @@ public class Bullet : MonoBehaviour
 				entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
 				
 			}
-			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == true){
-				entity.gameObject.GetComponent<EnemyLife>().shieldCrack();
-			}
 			Destroy(gameObject);
 			
 		} 

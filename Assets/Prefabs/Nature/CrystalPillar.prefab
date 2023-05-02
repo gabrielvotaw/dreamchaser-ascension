@@ -5345,8 +5345,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2099741749
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7a4e2a16a00a6d645b159d4890bfc3a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5379,6 +5379,11 @@ MonoBehaviour:
   bulletImmune: 0
   healthBar: {fileID: 2858308821718961425}
   damageReduction: 1
+  deathTime: 0
+  deathCount: 0
+  cheapKnock: 1
+  cheapKnockStore: 0
+  deathFlash: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!50 &2858308822368986999
 Rigidbody2D:
   serializedVersion: 4

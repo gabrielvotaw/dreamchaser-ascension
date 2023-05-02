@@ -33,12 +33,9 @@ public class PlayerBom : MonoBehaviour
       }
 
       if (entity.tag == "Enemy"){
-			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == false){
+			if(entity.tag == "Enemy"){
 				entity.gameObject.GetComponent<EnemyLife>().HurtEnemy(damageGive);
 				
-			}
-			if(entity.tag == "Enemy" && entity.gameObject.GetComponent<EnemyLife>().blockBullet() == true){
-				entity.gameObject.GetComponent<EnemyLife>().shieldCrack();
 			}
 			
 		} 
