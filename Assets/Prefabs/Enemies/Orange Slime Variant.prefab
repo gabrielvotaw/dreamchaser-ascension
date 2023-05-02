@@ -28,8 +28,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725495949212248435, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725495949212248435, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: chasing
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1725495949212248435, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: KnockBackUp
@@ -85,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ea2992c51326f4942a14cc6a8a85e063, type: 3}
     - target: {fileID: 8648213051525499825, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: m_Name
-      value: Orange Slime Variant
+      value: Orange Slime
       objectReference: {fileID: 0}
     - target: {fileID: 8648213051525499827, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: m_RootOrder
@@ -93,11 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8648213051525499827, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.2
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 8648213051525499827, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.6
+      value: -13.2
       objectReference: {fileID: 0}
     - target: {fileID: 8648213051525499827, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -146,7 +150,11 @@ PrefabInstance:
     - target: {fileID: 8648213051525499836, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: bloodBurst
       value: 
-      objectReference: {fileID: 4699334337086838258, guid: 12cb8b58691dc934fae61fdd5801be7d, type: 3}
+      objectReference: {fileID: 2000029461112005897, guid: 1e79aca74e4b4f84a86a55b207825d7f, type: 3}
+    - target: {fileID: 8648213051525499836, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
+      propertyPath: deathBurst
+      value: 
+      objectReference: {fileID: 6219935792161264755, guid: 78a5b85a946d5174a858e431d7c15078, type: 3}
     - target: {fileID: 8648213051525499836, guid: a21998402dc0da74fa03cac520c89fc5, type: 3}
       propertyPath: playerFace
       value: 
@@ -181,11 +189,11 @@ MonoBehaviour:
   bullet: {fileID: 7173289589406509066, guid: 43578193bdcd5084fb27cfd5b317a06a, type: 3}
   bulletPos: {fileID: 2038157707743898463}
   enemyMove: {fileID: 0}
-  fireTimer: 0
+  fireTimer: 0.05
   reloadCount: 0
   ammoCount: 0
-  ammoMax: 0
-  reloadTimer: 0
+  ammoMax: 20
+  reloadTimer: 4
   outAmmo: 0
   shootOn: 1
   bounceMode: 0

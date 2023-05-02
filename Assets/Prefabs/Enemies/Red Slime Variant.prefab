@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5749f69e98c16ca4fa62aaca3497a11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contactDamage: 100
+  contactDamage: 50
   playerFace: {fileID: 0}
   playerKnockBackForce: 14
   playerKnockBackUp: 12
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: KnockBackUp
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: chasingStore
@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -800930196012577717, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: KnockBackForce
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 751108723615035158, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_RenderMode
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: adab10207dd3b35419213c3c0901329e, type: 3}
     - target: {fileID: 1951229230728720009, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_Name
-      value: Red Slime
+      value: Red Slime Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1951229230728720010, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_Mass
@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6822109375852934465, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: contactDamage
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6974398012078672111, guid: 788b4397ce9134723806b3b7d74f8b25, type: 3}
       propertyPath: m_AnchorMax.y

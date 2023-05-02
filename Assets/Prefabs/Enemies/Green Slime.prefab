@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasing: 4
-  chasingStore: 6
+  chasingStore: 10
   speed: 1
   speedStore: 0
   speedMod: 1

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8622435942011770229}
   m_Layer: 0
   m_Name: Bomb Test
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,8 +244,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 4
   damageGive: 0
+  projectileTimer: 0
   projectileTime: 5
   lazyBoom: {fileID: 7632832287308274141}
+  vanish: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
 --- !u!58 &6845764460791029700
 CircleCollider2D:
   m_ObjectHideFlags: 0

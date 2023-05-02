@@ -4949,9 +4949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2369970eb530c984eb4e38838256d319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
-  projectileTime: 3
-  contactDamage: 20
+  force: 7
+  projectileTime: 2
+  contactDamage: 15
   KnockBackForce: 3
   KnockBackUp: 5
   KnockDirect: 1
