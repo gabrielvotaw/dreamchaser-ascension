@@ -102,17 +102,14 @@ public class PlayerMovement : MonoBehaviour
         if(bombCounter <= bombCounterMax){
             bombCounter++;
         }
-<<<<<<< Updated upstream
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)){
-            bulletSoundEffect.Play();
-=======
         if(bladeCounter <= bladeCounterMax){
             bladeCounter++;
         }
-        if(Input.GetKey(KeyCode.F)){
->>>>>>> Stashed changes
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)){
+            
             if (gunCounter > gunCounterMax){
                 gunCounter = 0;
+                bulletSoundEffect.Play();
                 Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
                 rb.velocity = new Vector2(1.5f * facingX, rb.velocity.y);
                 if (isWalking){
