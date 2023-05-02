@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource bulletSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -98,7 +99,8 @@ public class PlayerMovement : MonoBehaviour
         if(bombCounter <= bombCounterMax){
             bombCounter++;
         }
-        if(Input.GetKey(KeyCode.F)){
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)){
+            bulletSoundEffect.Play();
             if (gunCounter > gunCounterMax){
                 gunCounter = 0;
                 Instantiate(Projectile, FirePosition.position, FirePosition.rotation);// where to spawn projectile
