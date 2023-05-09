@@ -199,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
 
-        if (rb.velocity.y > .1f)
+        if (rb.velocity.y > 1f)
         {
             state = MovementState.jumping;
             isWalking = false;
@@ -212,6 +212,14 @@ public class PlayerMovement : MonoBehaviour
             isWalking = false;
             isIdle = false;
             isJumping = true;
+        }
+
+        if (state == MovementState.falling && IsGrounded())
+        {
+            state = MovementState.idle;
+            isWalking = false;
+            isIdle = true;
+            isJumping = false;
         }
 
         animator.SetInteger("state", (int)state);
@@ -235,6 +243,10 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("FiringOnAir");
         }
+
+        FiringOnWalkAttack = false;
+        FiringAttack = false;
+        FiringOnAir = false;
     }
     public void OnCollisionEnter2D(Collision2D entity) {
         
