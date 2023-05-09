@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public float bombCounterMax;
     public float bladeCounter;
     public float bladeCounterMax;
+    private float maxVelo = 30f;
     
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -88,7 +89,9 @@ public class PlayerMovement : MonoBehaviour
         else if(stunCounter >= stunCounterMax & IsGrounded()){
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        
+        if(rb.velocity.magnitude > maxVelo){
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelo);
+        }
         
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGrounded())
